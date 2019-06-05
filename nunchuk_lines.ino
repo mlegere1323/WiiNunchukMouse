@@ -50,9 +50,9 @@ void loop(){
 }
 
 /*
- * Establishes I2C communication w/ nunchuck
+ * Establishes I2C communication w/ nunchuk
  */
-void nunchuckInit(){
+void nunchukInit(){
   
   Wire.begin(0x52);                 // join I2C bus as master
   Wire.beginTransmission(0x52); // transmit to device 0x52
