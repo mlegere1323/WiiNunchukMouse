@@ -41,7 +41,8 @@ def get_input():
                 
             """ ACCEL X """
             #Want to bound values at 79, and 182, where 79 means
-            #the nunchuck is completely turned left, and 182 means
+            #the 
+            chuk is completely turned left, and 182 means
             #it's completely turned right
             accel_x = int(read_values[3])
             if accel_x < 79:
@@ -94,7 +95,7 @@ def get_input_2():
                 
             """ ACCEL X """
             #Want to bound values at 79, and 182, where 79 means
-            #the nunchuck is completely turned left, and 182 means
+            #the nunchuk is completely turned left, and 182 means
             #it's completely turned right
             accel_x = int(read_values[3])
             if accel_x < 79:
