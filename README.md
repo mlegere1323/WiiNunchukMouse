@@ -29,3 +29,6 @@
 * **C:** Engages gyro controls as long as it's being held down
 * **Z:** Right-click
 * **Gyro controls (when C is held):** moves the mouse around
+
+## Demo:
+* [YouTube Demo Video](https://youtu.be/ExCjDEq3abY)
