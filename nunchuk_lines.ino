@@ -1,7 +1,7 @@
 
 /*
- * nunchuck_lines sketch
- * sends data to Processing to draw line that follows nunchuck movement
+ * nunchuk_lines sketch
+ * sends data to Processing to draw line that follows nunchuk movement
  */
  
 #include <Wire.h> // initialize wire
@@ -10,9 +10,9 @@ const int vccPin = A3; // +v (power) provided by pin 17
 const int gndPin = A2; // gnd provided by pin 16
  
 const int dataLength = 6;        // number of bytes to request
-static byte rawData[dataLength]; // array to store nunchuck data
+static byte rawData[dataLength]; // array to store nunchuk data
  
-enum nunchuckItems{
+enum nunchukItems{
   joyX,
   joyY,
   accelX,
@@ -30,12 +30,12 @@ void setup(){
   delay(100); // wait for things to stabilize
   
   Serial.begin(9600);
-  nunchuckInit();
+  nunchukInit();
 }
 
 void loop(){
   
-  nunchuckRead();
+  nunchukRead();
   
   Serial.print("H,"); // header
   for(int i = 0; i < 7; i++){
@@ -65,9 +65,9 @@ void nunchuckInit(){
 }
 
 /* 
- * Send a request for data to the nunchuck
+ * Send a request for data to the nunchuk
  */
-static void nunchuckRequest(){
+static void nunchukRequest(){
   
   Wire.beginTransmission(0x52); // transmit data to device 0x52
   Wire.write((byte)0x00);       // sends one byte
@@ -77,22 +77,22 @@ static void nunchuckRequest(){
 
 
 /*
- * Receive data back from the nunchuck,
+ * Receive data back from the nunchuk,
  * returns true if read successful, else false
  */
-boolean nunchuckRead(){
+boolean nunchukRead(){
   
   int count = 0;
-  Wire.requestFrom(0x52, dataLength); // request data from nunchuck
+  Wire.requestFrom(0x52, dataLength); // request data from nunchuk
   
   // works like Serial.available (indicates how many bytes have been received)
   while(Wire.available()){
     // store data in rawData buffer
-    rawData[count] = nunchuckDecode(Wire.read());
+    rawData[count] = nunchukDecode(Wire.read());
     count++;
   }
   
-  nunchuckRequest(); // send request for next data payload
+  nunchukRequest(); // send request for next data payload
   
   if(count >= dataLength){
     return true;     // success if all 6 bytes received
@@ -105,7 +105,7 @@ boolean nunchuckRead(){
 /*
  * Encode data to format that most wiimote drivers accept
  */
-static char nunchuckDecode(byte x){
+static char nunchukDecode(byte x){
   return (x ^ 0x17) + 0x17;
 }
 
