@@ -1,4 +1,4 @@
-import nunchuck
+import nunchuk
 from pymouse import PyMouse
 
 delta = 1
@@ -11,7 +11,7 @@ x_dim, y_dim = m.screen_size()
 
 while True:
     #[joy_x, joy_y, accel_x, accel_y, accel_z, c_button, z_button]...TODO {shaken}
-    reading = nunchuck.get_input()
+    reading = nunchuk.get_input()
     curr_joy_x = reading[0]
     curr_joy_y = reading[1]
     #print(reading)
