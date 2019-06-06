@@ -4,6 +4,7 @@
 * Raspberry Pi/ Linux computer with Arduino IDE installed
 * This piece of hardware to connect the nunchuk to the Arduino ([buy it here](https://www.amazon.com/Adafruit-Nunchucky-Nunchuck-Breakout-Adapter/dp/B00NAY3N1G) -- you will need to solder on the pins yourself):
 ![Nunchuky](images/AdapterNunchuky.jpg)
+* A soldering iron
 * An Arduino (I have an Arduino Uno)
 * Python, installed with [pymouse](https://pypi.org/project/PyMouse/#files) and [pyserial](https://pythonhosted.org/pyserial/).
 
